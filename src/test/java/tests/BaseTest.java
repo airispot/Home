@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.*;
@@ -36,11 +37,11 @@ public class BaseTest {
             options.addArguments("--headless");
             options.addArguments("--start-maximized");
             driver = new ChromeDriver(options);
-        } else if (browserName.equals("firefox")) {
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
+        } else if (browserName.equals("edge")) {
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
         } else {
-            throw new Error("Only chrome and firefox are supported at the moment");
+            throw new Error("Only chrome and edge are supported at the moment");
         }
 
         WebDriverManager.chromedriver().setup();
