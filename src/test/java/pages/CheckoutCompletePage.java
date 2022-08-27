@@ -9,8 +9,8 @@ public class CheckoutCompletePage extends BasePage{
         super(driver);
     }
 
-    private By thankYouText = By.cssSelector("h2[class='complete-header']");
-    private By backHomeButton = By.id("back-to-products");
+    private final By thankYouText = By.cssSelector("h2[class='complete-header']");
+    private final By backHomeButton = By.id("back-to-products");
 
     public boolean thankYouTextIsDisplayed(){
         return driver.findElement(thankYouText).isDisplayed();

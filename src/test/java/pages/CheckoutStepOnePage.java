@@ -41,7 +41,7 @@ public class CheckoutStepOnePage extends BasePage {
     }
 
 
-    public void checkoutStepOneForm(String ann, String smith, String s)
+    public void checkoutStepOneForm()
     { driver.findElement(continueButton).click();
     }
 }

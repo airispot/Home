@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage {
 
-    private By userNameInput = By.id("user-name");
-    private By passwordInput = By.id("password");
-    private By loginButton = By.id("login-button");
+    private final By userNameInput = By.id("user-name");
+    private final By passwordInput = By.id("password");
+    private final By loginButton = By.id("login-button");
 
-    private By errorMassageContainer = By.cssSelector("div.error-message-container");
+    private final By errorMassageContainer = By.cssSelector("div.error-message-container");
 
     public LoginPage(WebDriver driver) {
         super(driver);

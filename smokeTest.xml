@@ -2,25 +2,25 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Smoke" parallel="tests" thread-count="2">
     <test name="Chrome tests">
-        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browser" value="chrome"/>
         <groups>
             <run>
                 <include name="Smoke"/>
             </run>
         </groups>
         <packages>
-            <package name="tests"></package>
+            <package name="tests"/>
         </packages>
     </test>
     <test name="Edge Tests">
-        <parameter name="browser" value="edge"></parameter>
+        <parameter name="browser" value="edge"/>
         <groups>
             <run>
                 <include name="Smoke"/>
             </run>
         </groups>
         <packages>
-            <package name="tests"></package>
+            <package name="tests"/>
         </packages>
     </test>
 </suite>
