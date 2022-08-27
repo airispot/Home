@@ -30,7 +30,7 @@ public class CartTest extends BaseTest {
         productPage.clickShoppingCartLink();
 
         cartPage.clickCheckoutButton();
-        checkoutStepOnePage.checkoutStepOneForm("Ann","Smith","12345");
+        checkoutStepOnePage.checkoutStepOneForm();
         checkoutStepTwoPage.clickFinishButton();
         checkoutCompletePage.clickBackHomeButton();
         Assert.assertTrue(productPage.isHeaderContainerDisplayed());
@@ -44,7 +44,7 @@ public class CartTest extends BaseTest {
         productPage.clickAddToCartButton(TEST_ITEM_NAME);
         productPage.clickShoppingCartLink();
         cartPage.clickCheckoutButton();
-        checkoutStepOnePage.checkoutStepOneForm("Ann","Smith","12345");
+        checkoutStepOnePage.checkoutStepOneForm();
         checkoutStepTwoPage.clickFinishButton();
 
         Assert.assertTrue(checkoutCompletePage.thankYouTextIsDisplayed());
