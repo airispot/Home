@@ -6,11 +6,13 @@ import org.testng.annotations.Test;
 public class CartTest extends BaseTest {
 
     private final String TEST_ITEM_NAME = "Sauce Labs Onesie";
+    protected final String TEST_USER_NAME = "standard_user";
+    protected final String TEST_PASSWORD = "secret_sauce";
 
 
     @Test
     public void removeItemFromTheCart() throws InterruptedException {
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(TEST_USER_NAME, TEST_PASSWORD);
         productPage.clickAddToCartButton(TEST_ITEM_NAME);
         productPage.clickShoppingCartLink();
         String actualDescription = cartPage.getCartIProductDescription(TEST_ITEM_NAME);
@@ -25,7 +27,7 @@ public class CartTest extends BaseTest {
 
     public void checkoutStepOneTest(){
 
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(TEST_USER_NAME, TEST_PASSWORD);
         productPage.clickAddToCartButton(TEST_ITEM_NAME);
         productPage.clickShoppingCartLink();
 
@@ -40,7 +42,7 @@ public class CartTest extends BaseTest {
 
     public void checkoutStepTwoTest(){
 
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(TEST_USER_NAME, TEST_PASSWORD);
         productPage.clickAddToCartButton(TEST_ITEM_NAME);
         productPage.clickShoppingCartLink();
         cartPage.clickCheckoutButton();

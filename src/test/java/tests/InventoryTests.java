@@ -5,11 +5,12 @@ import org.testng.annotations.Test;
 
 public class InventoryTests extends BaseTest {
     private final String TEST_ITEM_NAME = "Sauce Labs Onesie";
-
     private final String TEST_ITEM_NAME2 = "Sauce Labs Bike Light";
+    protected final String TEST_USER_NAME = "standard_user";
+    protected final String TEST_PASSWORD = "secret_sauce";
     @Test (groups = {"Smoke"}, enabled = true, description = "temporary disabled until...")
     public void productAvailabilityTest () throws InterruptedException {
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(TEST_USER_NAME, TEST_PASSWORD);
         String actualPrice = productPage.getProductPrice(TEST_ITEM_NAME);
         String actualDescription = productPage.getProductDescription(TEST_ITEM_NAME);
         Assert.assertEquals(actualPrice, "$7.99");
@@ -20,7 +21,7 @@ public class InventoryTests extends BaseTest {
     }
     @Test (groups = {"Smoke"}, enabled = true)
     public void secondProductAvailabilityTest () throws InterruptedException {
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(TEST_USER_NAME, TEST_PASSWORD);
         String actualPrice = productPage.getProductPrice(TEST_ITEM_NAME2);
         String actualDescription = productPage.getProductDescription(TEST_ITEM_NAME2);
         Assert.assertEquals(actualPrice, "$9.99");

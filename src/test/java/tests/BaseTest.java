@@ -24,7 +24,7 @@ public class BaseTest {
 
     protected CheckoutStepTwoPage checkoutStepTwoPage;
 
-    @Parameters({"browser"})
+   // @Parameters({"browser"})
     @BeforeClass(alwaysRun = true)
     public void setUp(@Optional("chrome") String browser) {
 
@@ -38,9 +38,8 @@ public class BaseTest {
         } else if (browserName.equals("edge")) {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
-        } else {
-            throw new Error("Only chrome and edge are supported at the moment");
         }
+
 
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
